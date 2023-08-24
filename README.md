@@ -5,7 +5,7 @@
 You can install the TOC generator using npm:
 
 ```sh
-npm install table-of-contents-generator
+npm i @serferdinand2/table-of-contents-generator
 ```
 
 ## Usage
