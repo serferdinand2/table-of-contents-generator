@@ -10,10 +10,12 @@ npm install table-of-contents-generator
 
 ## Usage
 
-To use the TOC generator, import the `tableOfContents` function from the toc-generator module and call it with your input source and type. The function returns a table of contents as a string.
+To use the TOC generator, import the `tableOfContents` function from the toc-generator module and call it with your input source and type. The function returns a table of contents as an HTML list.
 
 ```js
 import tableOfContents from "table-of-contents-generator";
 
 const toc = tableOfContents(html, "html");
 ```
+
+
