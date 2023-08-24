@@ -1,4 +1,4 @@
-# TOC Generator for Markdown, HTML and URL inputs
+# TOC Generator for HTML and Markdown
 
 ## Installation
 
@@ -17,5 +17,3 @@ import tableOfContents from "table-of-contents-generator";
 
 const toc = tableOfContents(html, "html");
 ```
-
-
