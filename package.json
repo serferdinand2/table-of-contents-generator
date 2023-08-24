@@ -1,0 +1,16 @@
+{
+  "name": "table-of-contents-generator",
+  "version": "1.0.0",
+  "description": "creates TOC from a page",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.ts",
+    "test": "vitest"
+  },
+  "author": "Ognjen Ugljenovic",
+  "license": "GNU",
+  "dependencies": {
+    "cspell": "^7.0.1",
+    "vitest": "^0.34.2"
+  }
+}
