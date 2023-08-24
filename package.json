@@ -4,10 +4,10 @@
   "description": "creates TOC from a page",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "spell": "cspell"
   },
-  "author": "Ognjen Ugljenovic",
+  "author": "Ognjen Ugljenović ",
   "license": "GNU",
   "dependencies": {
     "cspell": "^7.0.1",
