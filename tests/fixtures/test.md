@@ -1,4 +1,4 @@
-export default `
+
 # Decision-making surveys: Using  data-driven info
 Data-driven decision-making surveys are a fundamental pillar of modern business methodology. As organizations face increasingly complex challenges, the need for accurate and reliable data becomes paramount to making informed choices. Decision-making surveys have emerged as powerful tools to collect valuable insights from stakeholders, customers, and employees.
 ​
@@ -95,4 +95,4 @@ As technology continues to advance, decision-making surveys will likely become e
 Get SurveyPlanet to make decision-making surveys and buying-decision questionnaires easy. Use pre-written questions, or our [survey templates and examples](https://surveyplanet.com/examples), to get the job done. [Signup](https://app.surveyplanet.com/signup) to access hundreds of features that will help you create the perfect survey for your needs. Explore our three simple plans to meet all of your needs.
 ​
 ​
-Photo by <a href="https://unsplash.com/@madebyjens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jens Lelie</a> on <a href="https://unsplash.com/photos/u0vgcIOQG08?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>`;
+Photo by <a href="https://unsplash.com/@madebyjens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jens Lelie</a> on <a href="https://unsplash.com/photos/u0vgcIOQG08?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
