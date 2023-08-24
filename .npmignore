@@ -1,0 +1,15 @@
+.cspell.json
+.eslintrc.json
+.github
+.nyc_output
+.prettierrc.yaml
+.releaserc.yaml
+.vscode
+bin
+coverage/
+dist
+index.d.ts
+node_modules
+src
+tsconfig.json
+tsconfig.lint.json
