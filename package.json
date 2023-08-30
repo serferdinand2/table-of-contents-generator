@@ -1,39 +1,38 @@
 {
-	"name": "@serferdinand2/table-of-contents-generator",
-	"version": "1.1.1",
-	"description": "creates TOC from a page",
-	"type": "module",
-	"main": "dist/cjs/index.js",
-	"module": "dist/mjs/index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/serferdinand2/table-of-contents-generator"
-	},
-	"scripts": {
-		"build": "./bin/build.js",
-		"test": "vitest --run",
-		"test:dev": "vitest --watch",
-		"spell": "cspell .",
-		"lint": "eslint .",
-		"release": "semantic-release",
-		"release:dry": "semantic-release --dry-run"
-	},
-	"author": "Ognjen Ugljenović ",
-	"license": "GNU",
-	"devDependencies": {
-		"@semantic-release/changelog": "^6.0.3",
-		"@semantic-release/commit-analyzer": "^10.0.4",
-		"@semantic-release/github": "^9.0.4",
-		"@semantic-release/npm": "^10.0.5",
-		"@semantic-release/release-notes-generator": "^11.0.7",
-		"@typescript-eslint/eslint-plugin": "^6.5.0",
-		"cspell": "^7.0.1",
-		"esbuild": "^0.19.2",
-		"eslint": "^8.48.0",
-		"eslint-plugin-eslint-comments": "^3.2.0",
-		"eslint-plugin-import": "^2.28.1",
-		"prettier": "^3.0.3",
-		"semantic-release": "^21.1.1",
-		"vitest": "^0.34.2"
-	}
+  "name": "@serferdinand2/table-of-contents-generator",
+  "version": "1.1.1",
+  "description": "creates TOC from a page",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serferdinand2/table-of-contents-generator"
+  },
+  "scripts": {
+    "build": "./bin/build.js",
+    "test": "vitest --run",
+    "test:dev": "vitest --watch",
+    "spell": "cspell .",
+    "lint": "eslint .",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
+  },
+  "author": "Ognjen Ugljenović ",
+  "license": "GNU",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.4",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.5",
+    "@semantic-release/release-notes-generator": "^11.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "cspell": "^7.0.1",
+    "esbuild": "^0.19.2",
+    "eslint": "^8.48.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.28.1",
+    "semantic-release": "^21.1.1",
+    "vitest": "^0.34.2"
+  }
 }
