@@ -1,12 +1,13 @@
-name: TOC Utilities
+name: TOC
 
 on: [push]
 
 env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+permissions: write-all
 jobs:
-  utilities:
+  TableOfContents:
     runs-on: ubuntu-latest
 
     concurrency:
@@ -43,7 +44,8 @@ jobs:
         run: npm run test
 
       - name: Release
+        
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
