@@ -1,0 +1,21 @@
+{
+	"version": "0.2",
+	"language": "en",
+	"words": [
+		"outdir",
+		"serferdinand",
+		"Ognjen",
+		"Ugljenović",
+		"surveyplanet"
+	],
+	"flagWords": [],
+	"ignorePaths": [
+		"package.json",
+		"package-lock.json",
+		"yarn.lock",
+		"tsconfig.json",
+		"node_modules/**",
+		".cspell.json",
+		"tests/fixtures/**"
+	]
+}

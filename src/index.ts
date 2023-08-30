@@ -121,7 +121,7 @@ export const nestedArrayToHtmlList = (headers: Headers[]) => {
 };
 
 // export final function
-export const tableOfContents = async (source: string, type: ContentType) => {
+export default (source: string, type: ContentType) => {
   const headers = parseHeaders(source, type);
   return nestedArrayToHtmlList(headers);
 };
