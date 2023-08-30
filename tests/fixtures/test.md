@@ -5,7 +5,7 @@ Data-driven decision-making surveys are a fundamental pillar of modern business 
 This blog post explores the role of decision-making surveys. Learn how organizations leverage such surveys to make informed choices, optimize the customer experience, boost employee engagement, and streamline processes. 
 ​
 ​
-## Understanding decision-making surveys
+## Understanding decision-making survey
 ​
 Decision-making surveys are structured questionnaires designed to gather specific information from targeted respondents. They provide organizations with both quantitative and qualitative data, enabling them to assess various aspects of their business, better understand customer preferences, measure employee satisfaction, and make informed decisions based on empirical evidence.
 ​

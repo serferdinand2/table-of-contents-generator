@@ -90,7 +90,7 @@ describe('Parse html string to headers', () => {
 				headerText: 'Decision-making surveys: Using data-driven info',
 				children: [
 					{
-						headerText: 'Understanding decision-making surveys',
+						headerText: 'Understanding decision-making survey',
 						children: [
 							{
 								headerText:
@@ -200,7 +200,7 @@ describe('Table of contents', () => {
 		const markdown = await readFile('tests/fixtures/test.md', 'utf-8');
 		const res = await tableOfContents(markdown, 'md');
 		expect(res).toBe(
-			`<ul><li><a href=#decision-making-surveys-using-data-driven-info>Decision-making surveys: Using data-driven info</a><ul><li><a href=#understanding-decision-making-surveys>Understanding decision-making surveys</a><ul><li><a href=#key-characteristics-of-decision-making-surveys>Key characteristics of decision-making surveys</a></li><li><a href=#applications-of-decision-making-surveys>Applications of decision-making surveys</a></li><li><a href=#benefits-of-decision-making-surveys>Benefits of decision-making surveys</a></li></ul></li><li><a href=#what-is-a-purchasing-decision-questionnaire?>What is a purchasing decision questionnaire?</a></li><li><a href=#how-is-a-purchasing-decision-questionnaire-different-from-a-decision-making-survey?>How is a purchasing decision questionnaire different from a decision-making survey?</a><ul><li><a href=#focus-and-purpose>Focus and purpose</a></li><li><a href=#application>Application</a></li><li><a href=#scope>Scope</a></li></ul></li><li><a href=#get-surveyplanet-and-easily-make-decision-making-surveys>Get SurveyPlanet and easily make decision-making surveys</a></li></ul></li></ul>`
+			`<ul><li><a href=#decision-making-surveys-using-data-driven-info>Decision-making surveys: Using data-driven info</a><ul><li><a href=#understanding-decision-making-survey>Understanding decision-making survey</a><ul><li><a href=#key-characteristics-of-decision-making-surveys>Key characteristics of decision-making surveys</a></li><li><a href=#applications-of-decision-making-surveys>Applications of decision-making surveys</a></li><li><a href=#benefits-of-decision-making-surveys>Benefits of decision-making surveys</a></li></ul></li><li><a href=#what-is-a-purchasing-decision-questionnaire?>What is a purchasing decision questionnaire?</a></li><li><a href=#how-is-a-purchasing-decision-questionnaire-different-from-a-decision-making-survey?>How is a purchasing decision questionnaire different from a decision-making survey?</a><ul><li><a href=#focus-and-purpose>Focus and purpose</a></li><li><a href=#application>Application</a></li><li><a href=#scope>Scope</a></li></ul></li><li><a href=#get-surveyplanet-and-easily-make-decision-making-surveys>Get SurveyPlanet and easily make decision-making surveys</a></li></ul></li></ul>`
 		);
 	});
 });

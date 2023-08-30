@@ -2,11 +2,12 @@
 	"version": "0.2",
 	"language": "en",
 	"words": [
-		"outdir",
-		"serferdinand",
 		"Ognjen",
-		"Ugljenović",
-		"surveyplanet"
+		"outdir",
+		"Parens",
+		"serferdinand",
+		"surveyplanet",
+		"Ugljenović"
 	],
 	"flagWords": [],
 	"ignorePaths": [

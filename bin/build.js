@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { copyFile, stat, mkdir } from 'fs/promises';
 import { build as esbuild } from 'esbuild';
+import { existsSync } from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -16,19 +17,15 @@ const baseConfig = {
 };
 
 const OUT_DIR = path.join(__dirname, '../dist');
-
 (async function () {
+    if (!existsSync(OUT_DIR)) {
+        await mkdir(OUT_DIR);
+    }
 
-	const statRes = await stat(OUT_DIR);
-	
-	if ( !statRes.isDirectory() ) {
-		await mkdir(OUT_DIR);
-	}
-
-	await copyFile(
-		path.join(__dirname, '../package.json'),
-		path.join(OUT_DIR, '/package.json')
-	);
+	// await copyFile(
+	// 	path.join(__dirname, '../package.json'),
+	// 	path.join(OUT_DIR, '/package.json')
+	// );
 
 	await esbuild({
 		...baseConfig,

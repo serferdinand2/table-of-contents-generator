@@ -97,9 +97,9 @@ export const nestedArrayToHtmlList = (headers: Headers[]) => {
   let html = "<ul>";
 
   for (const header of headers) {
-    let id = header.headerText
+    const id = header.headerText
       .replace(/\s/g, "-")
-      .replace(/\:/g, "")
+      .replace(/:/g, "")
       .toLowerCase();
 
     html += `<li><a href=#${id}>${header.headerText}</a>`;
