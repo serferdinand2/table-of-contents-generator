@@ -1,5 +1,4 @@
 import { it, describe, expect } from 'vitest';
-import { inspect } from 'util';
 import { readFile } from 'node:fs/promises';
 import tableOfContents, {
 	nestedArrayToHtmlList,

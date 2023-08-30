@@ -5,10 +5,10 @@
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/serferdinand2/table-of-contents-generator"
-  },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:serferdinand2/table-of-contents-generator.git"
+    },
   "scripts": {
     "build": "./bin/build.js",
     "test": "vitest --run",
