@@ -72,7 +72,6 @@ describe('Parse html string to headers', () => {
 	it('should parse all html headers', async () => {
 		const html = await readFile('tests/fixtures/test.html', 'utf-8');
 		const res = parseHeaders(html, 'html');
-		console.log(inspect(res, { colors: true, depth: 10 }));
 		expect(res).toBeInstanceOf(Array);
 		expect(res.length).toBe(1);
 		expect(res[0].headerText).toBe(
