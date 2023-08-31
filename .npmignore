@@ -5,6 +5,11 @@
 .prettierrc.yaml
 .releaserc.yaml
 .vscode
+.eslintrc.cjs
+.gitignore
+.CHANGELOG.md
+.LICENSE
+.README.md
 tests
 bin
 coverage/
