@@ -5,6 +5,7 @@
 .prettierrc.yaml
 .releaserc.yaml
 .vscode
+tests
 bin
 coverage/
 index.d.ts
