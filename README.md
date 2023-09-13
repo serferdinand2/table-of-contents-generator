@@ -10,9 +10,13 @@ npm i @serferdinand2/table-of-contents-generator
 
 ## Usage
 
-To use the TOC generator, import the `tableOfContents` function from the toc-generator module and call it with your input source and type. The function returns a table of contents as an HTML list.
+You should be able to use this module in both Node.js and the browser as it supports both CommonJS and ES6 modules.
 
-This function only works as long as the first header is the top level header. If you have a header above the top level header, it will not work.
+To use the TOC generator, import the function from the toc-generator module and call it with your input source and type. The function returns a table of contents as an HTML list.
+
+This function only works as long as the first header is the top level header. If you have a header above the top level header down the line in your HTML, it will not work.
+
+### Example
 
 ```js
 import parseHeaders from "@serferdinand2/table-of-contents-generator";
