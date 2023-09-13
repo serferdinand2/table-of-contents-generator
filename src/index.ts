@@ -1,5 +1,6 @@
 interface Headers {
   headerText: string;
+  id: string;
   children: Headers[];
 }
 
@@ -20,7 +21,7 @@ const getHeadersFromMarkdown = (markdown: string) => {
 };
 
 // get headers from html, or markdown
-const inputHeaders = (source: string, type: ContentType) => {
+export const inputHeaders = (source: string, type: ContentType) => {
   if (type === "md") {
     return getHeadersFromMarkdown(source);
   }
@@ -32,20 +33,20 @@ const inputHeaders = (source: string, type: ContentType) => {
 export const parseHeaders = (source: string, type: ContentType): Headers[] => {
   // get all headers
   const htmlHeaders = inputHeaders(source, type);
-
   if (!htmlHeaders || !htmlHeaders.length) {
     return [];
   }
 
   // nest headers
   const headers: Headers[] | undefined = [];
-  let currentHeader: Headers[] | undefined = headers;
+  let currentHeaderArray: Headers[] | undefined = headers;
   let currentLevel = 0;
   if (type === "md") {
     currentLevel = htmlHeaders[0].split("#").length - 1;
   } else {
     currentLevel = parseInt(htmlHeaders[0].charAt(2));
   }
+  const levelController = currentLevel - 1;
 
   for (const header of htmlHeaders) {
     let headerLevel: number;
@@ -71,57 +72,30 @@ export const parseHeaders = (source: string, type: ContentType): Headers[] => {
         .replace(/ {2}/g, " ");
     }
 
-    // console.log(headerText, headerLevel);
-    if (headerLevel === currentLevel && currentHeader) {
-      currentHeader.push({ headerText: headerText, children: [] });
-    } else if (headerLevel > currentLevel && currentHeader) {
-      currentHeader[currentHeader.length - 1].children = [
-        { headerText, children: [] },
+    const id = `#${headerText
+      .replace(/[^\w\s-]|_/g, "")
+      .replace(/\s/g, "-")
+      .replace(/:/g, "")
+
+      .toLowerCase()}`;
+    if (headerLevel === currentLevel && currentHeaderArray) {
+      currentHeaderArray.push({ headerText: headerText, id, children: [] });
+    } else if (headerLevel > currentLevel && currentHeaderArray) {
+      currentHeaderArray[currentHeaderArray.length - 1].children = [
+        { headerText, id, children: [] },
       ];
-      currentHeader = currentHeader[currentHeader.length - 1].children;
+      currentHeaderArray =
+        currentHeaderArray[currentHeaderArray.length - 1].children;
       currentLevel = headerLevel;
     } else if (headerLevel < currentLevel) {
-      currentHeader = headers;
-      for (let i = 1; i < headerLevel; i++) {
-        currentHeader = currentHeader[currentHeader.length - 1].children;
+      currentHeaderArray = headers;
+      for (let i = 1; i < headerLevel - levelController; i++) {
+        currentHeaderArray =
+          currentHeaderArray[currentHeaderArray.length - 1].children;
       }
       currentLevel = headerLevel;
-      currentHeader.push({ headerText: headerText, children: [] });
+      currentHeaderArray.push({ headerText: headerText, id, children: [] });
     }
   }
   return headers;
-};
-
-// convert nested array to html list
-export const nestedArrayToHtmlList = (headers: Headers[]) => {
-  let html = "<ul>";
-
-  for (const header of headers) {
-    const id = header.headerText
-      .replace(/\s/g, "-")
-      .replace(/:/g, "")
-      .toLowerCase();
-
-    html += `<li><a href=#${id}>${header.headerText}</a>`;
-
-    if (
-      typeof header !== "undefined" &&
-      header.children &&
-      header.children.length
-    ) {
-      html += nestedArrayToHtmlList(header.children);
-    }
-
-    html += "</li>";
-  }
-
-  html += "</ul>";
-
-  return html;
-};
-
-// export final function
-export default (source: string, type: ContentType) => {
-  const headers = parseHeaders(source, type);
-  return nestedArrayToHtmlList(headers);
 };
