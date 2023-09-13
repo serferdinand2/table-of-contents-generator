@@ -23,13 +23,14 @@ var parseHeaders = (source, type) => {
     return [];
   }
   const headers = [];
-  let currentHeader = headers;
+  let currentHeaderArray = headers;
   let currentLevel = 0;
   if (type === "md") {
     currentLevel = htmlHeaders[0].split("#").length - 1;
   } else {
     currentLevel = parseInt(htmlHeaders[0].charAt(2));
   }
+  const levelController = currentLevel - 1;
   for (const header of htmlHeaders) {
     let headerLevel;
     let headerText;
@@ -43,45 +44,28 @@ var parseHeaders = (source, type) => {
     } else {
       headerText = header.replace(/<[^>]*>/g, "").trim().replace(/\n\s*/g, " ").replace(/ {2}/g, " ");
     }
-    if (headerLevel === currentLevel && currentHeader) {
-      currentHeader.push({ headerText, children: [] });
-    } else if (headerLevel > currentLevel && currentHeader) {
-      currentHeader[currentHeader.length - 1].children = [
-        { headerText, children: [] }
+    const id = `#${headerText.replace(/[^\w\s-]|_/g, "").replace(/\s/g, "-").replace(/:/g, "").toLowerCase()}`;
+    if (headerLevel === currentLevel && currentHeaderArray) {
+      currentHeaderArray.push({ headerText, id, children: [] });
+    } else if (headerLevel > currentLevel && currentHeaderArray) {
+      currentHeaderArray[currentHeaderArray.length - 1].children = [
+        { headerText, id, children: [] }
       ];
-      currentHeader = currentHeader[currentHeader.length - 1].children;
+      currentHeaderArray = currentHeaderArray[currentHeaderArray.length - 1].children;
       currentLevel = headerLevel;
     } else if (headerLevel < currentLevel) {
-      currentHeader = headers;
-      for (let i = 1; i < headerLevel; i++) {
-        currentHeader = currentHeader[currentHeader.length - 1].children;
+      currentHeaderArray = headers;
+      for (let i = 1; i < headerLevel - levelController; i++) {
+        currentHeaderArray = currentHeaderArray[currentHeaderArray.length - 1].children;
       }
       currentLevel = headerLevel;
-      currentHeader.push({ headerText, children: [] });
+      currentHeaderArray.push({ headerText, id, children: [] });
     }
   }
   return headers;
 };
-var nestedArrayToHtmlList = (headers) => {
-  let html = "<ul>";
-  for (const header of headers) {
-    const id = header.headerText.replace(/\s/g, "-").replace(/:/g, "").toLowerCase();
-    html += `<li><a href=#${id}>${header.headerText}</a>`;
-    if (typeof header !== "undefined" && header.children && header.children.length) {
-      html += nestedArrayToHtmlList(header.children);
-    }
-    html += "</li>";
-  }
-  html += "</ul>";
-  return html;
-};
-var generateTableOfContents = (source, type) => {
-  const headers = parseHeaders(source, type);
-  return nestedArrayToHtmlList(headers);
-};
 export {
-  generateTableOfContents,
-  nestedArrayToHtmlList,
+  inputHeaders,
   parseHeaders
 };
 //# sourceMappingURL=index.js.map
