@@ -19,13 +19,70 @@ This function only works as long as the first header is the top level header. If
 ### Example
 
 ```js
-import parseHeaders from "@serferdinand2/table-of-contents-generator";
+import parseHeaders from '@serferdinand2/table-of-contents-generator';
 
-const toc = parseHeaders(html, "html");
+const toc = parseHeaders(html, 'html');
+```
+
+#### Output
+
+```js
+[
+	{
+		headerText: 'Header 1',
+		id: 'header-1',
+		children: [
+			{
+				headerText: 'Header 2',
+				id: 'header-2',
+				children: [
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+				],
+			},
+			{ headerText: 'Header 2', id: 'header-2', children: [] },
+			{
+				headerText: 'Header 2',
+				id: 'header-2',
+				children: [
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+					{
+						headerText: 'Header 3',
+						id: 'header-3',
+						children: [],
+					},
+				],
+			},
+			{ headerText: 'Header 2', id: 'header-2', children: [] },
+		],
+	},
+];
 ```
 
 or
 
 ```js
-const toc = parseHeaders(markdown, "markdown");
+const toc = parseHeaders(markdown, 'markdown');
 ```
